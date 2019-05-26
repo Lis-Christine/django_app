@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+</head>
+<body>
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+            <tr>
+                <th>照会数
+                </th>
+                <th>タイトル
+                </th>
+                <th>作成者
+                </th>
+                <th>作成日
+                </th>   
+            </tr>
+        </thead>
+        <tbody>
+        { % if boardList % }
+            {%for item in boardList%}
+            <tr>
+                <td>{{item.hits}}
+                </td>
+                <td>
+                    <p>
+                        <a href="/board/write?board_id={{item.board_id}}">{{item.title}}</a>
+                    </p>
+                </td>
+                <td>{{item.c_user}}
+                </td>
+                <td>{{item.c_date}}
+                </td>
+            </tr>
+            {%endfor%}
+        {%else%}
+            <p>'データがありません'</p>
+        {%end if%}
+        </tbody>
+    </table>
+</body>
+</html>
+<script type="text/javascript"> 
+    
+
+</script>
